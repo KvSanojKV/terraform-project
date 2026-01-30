@@ -23,7 +23,7 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan
-        run: terraform plan -var="bucket_name=terraform-pipeline-sanoj-12345"
+        run: terraform plan -var="bucket_name=terraform-pipeline-sanoj-123456"
 
   apply:
     needs: plan
