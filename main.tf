@@ -1,15 +1,20 @@
 terraform {
   required_providers {
-    local = {
-      source  = "hashicorp/local"
-      version = "~> 2.0"
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
     }
   }
 }
 
-provider "local" {}
+provider "aws" {
+  region = var.aws_region
+}
 
-resource "local_file" "example" {
-  filename = "hello.txt"
-  content  = "Hello Terraform Pipeline 🚀"
+resource "aws_s3_bucket" "demo_bucket" {
+  bucket = var.bucket_name
+
+  tags = {
+    Name = "Terraform-Pipeline-Bucket"
+  }
 }
