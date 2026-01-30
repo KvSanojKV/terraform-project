@@ -44,5 +44,5 @@ jobs:
         run: terraform init
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve -var="bucket_name=terraform-pipeline-sanoj-12345"
+        run: terraform apply -auto-approve -var="bucket_name=terraform-pipeline-sanoj-123456"
 
